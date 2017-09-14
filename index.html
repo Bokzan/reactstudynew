@@ -143,23 +143,25 @@
     //6
     var LikeButton = React.createClass({
         getInitialState: function () {
-            return {like: false}
+            return {liked: false}
         },
-        handleClick: function (event) {
-            this.setState({})
+        handleClick: function () {
+            this.setState({liked: !this.state.liked})
         },
         render: function () {
+            var text = this.state.liked ? <img src="favactive.png" alt=""/> : <img src="fav.png" alt=""/>
             return (
-
+                    <p onClick={this.handleClick}> you {text}</p>
             );
         }
     });
+
     ReactDOM.render(
             <LikeButton/>,
         document.body
     );
-//    666
-    //    66666
+
+
 </script>
 </body>
 </html>
