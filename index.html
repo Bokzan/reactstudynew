@@ -191,7 +191,16 @@
             return {opacity: 1}
         },
         componentDidMount: function () {
-
+            this.timer = setInterval(function () {
+                var opacity = this.state.opacity;
+                opacity -= .05;
+                if (opacity < 0.1) {
+                    opacity = 1.0;
+                }
+                this.setState({
+                    opacity: opacity
+                });
+            }.bind(this), 1000)
         },
         render: function () {
             return (
