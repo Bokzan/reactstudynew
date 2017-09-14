@@ -1,3 +1,4 @@
+<!-- Study in http://www.ruanyifeng.com/blog/2015/03/react.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,48 +13,152 @@
 
 
 <script type="text/babel">
-//1
-//    ReactDOM.render(
-//            <h1>hello</h1>,
-//        document.getElementById("example")
-//    );
+    //1
+    //    ReactDOM.render(
+    //            <h1>hello</h1>,
+    //        document.getElementById("example")
+    //    );
 
-//2
-//    var names=['a','b','c']
-//    ReactDOM.render(
-//        <div>
-//            {
-//                names.map(function (n) {
-//                    return <div>hello,{n}</div>
-//                })
-//            }
-//        </div>,
-//        document.getElementById("example")
-//    );
+    //2
+    //    var names=['a','b','c']
+    //    ReactDOM.render(
+    //        <div>
+    //            {
+    //                names.map(function (n) {
+    //                    return <div>hello,{n}</div>
+    //                })
+    //            }
+    //        </div>,
+    //        document.getElementById("example")
+    //    );
 
-//3
-//    var div=[
-//        <div>1</div>,
-//        <div>2</div>
-//    ]
-//    ReactDOM.render(
-//        <div>{div}</div>,
-//        document.getElementById("example")
-//    );
+    //3
+    //    var div=[
+    //        <div>1</div>,
+    //        <div>2</div>
+    //    ]
+    //    ReactDOM.render(
+    //        <div>{div}</div>,
+    //        document.getElementById("example")
+    //    );
 
-//4
-    var HelloMessage=React.createClass({
-        render:function () {
-            return <div>
-                <div>{this.props.a}</div>
-                <div>hello {this.props.b}</div>
-                </div>
+    //4
+    //        var HelloMessage=React.createClass({
+    //            render:function () {
+    //                return <div>
+    //                    <div>{this.props.a}</div>
+    //                    <div>hello {this.props.b}</div>
+    //                    </div>
+    //            }
+    //        });
+    //        ReactDOM.render(
+    //            <HelloMessage a="hahaa" b="666"/>,
+    //            document.getElementById("example")
+    //        );
+
+    //5
+    //    var Nodeslist=React.createClass(
+    //        {
+    //            render:function () {
+    //                return(
+    //                    <ul>
+    //                        {
+    //                            React.Children.map(this.props.children,function (child) {
+    //                                return <li>{child}</li>
+    //                            })
+    //                        }
+    //                    </ul>
+    //                )
+    //            }
+    //        }
+    //    );
+    //    ReactDOM.render(
+    //            <Nodeslist>
+    //                <span>helloaaa</span>
+    //                <span>hello666a</span>
+    //            </Nodeslist>,
+    //        document.body
+    //    );
+
+
+    //1
+    //    ReactDOM.render(
+    //        <h1>hello</h1>,
+    //        document.getElementById("example")
+    //    );
+
+    //2
+    //    var names=["aaa","bbb","ccc"];
+    //    ReactDOM.render(
+    //        <div>{names}</div>,
+    //        document.getElementById("example")
+    //    );
+
+
+    //    4
+    /*     var NotesList = React.createClass({
+     render: function () {
+     return (
+     <ol>
+     {
+     React.Children.map(this.props.children, function (child) {
+     return <li>{child}</li>
+     })
+     }
+     </ol>
+     );
+     }
+     });
+
+     ReactDOM.render(
+     <NotesList >
+     <span>hello</span>
+     <span>hello2</span>
+     </NotesList>,
+     document.body
+     )
+     */
+
+    //    5
+    /*var MyComponent=React.createClass({
+     handleClick:function () {
+     this.refs.myTextInput.focus();
+     },
+     render:function () {
+     return(
+     <div>
+     <input type="text" ref="myTextInput"/>
+     <input type="button" value="focus" onClick={this.handleClick}/>
+     </div>
+     );
+     }
+     });
+     ReactDOM.render(
+     <MyComponent/>,
+     document.getElementById("example")
+     )
+     */
+
+
+    //6
+    var LikeButton = React.createClass({
+        getInitialState: function () {
+            return {like: false}
+        },
+        handleClick: function (event) {
+            this.setState({})
+        },
+        render: function () {
+            return (
+
+            );
         }
     });
     ReactDOM.render(
-        <HelloMessage a="hahaa" b="666"/>,
-        document.getElementById("example")
+            <LikeButton/>,
+        document.body
     );
+//    666
 </script>
 </body>
 </html>
