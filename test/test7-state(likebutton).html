@@ -6,29 +6,44 @@
     <script src="../build/react.js"></script>
     <script src="../build/react-dom.js"></script>
     <script src="../build/browser.min.js"></script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
 <div id="example"></div>
 
 
 <script type="text/babel">
-    var MyComponent = React.createClass({
+    var LikeButton = React.createClass({
+        getInitialState: function () {
+            return {liked: false};
+        },
 
         handleClick: function () {
-            this.refs.myTextInput.focus();
+            this.setState({liked: !this.state.liked});
         },
 
         render: function () {
+            var display = this.state.liked ? 'show' : 'hide'
             return (
                     <div>
-                        <input type="text" ref="myTextInput"/>
-                        <input type="button" value="click" onClick={this.handleClick}/>
+                        <p className={display}>
+                            hahahah
+                        </p>
+                        <button onClick={this.handleClick}>点</button>
                     </div>
             );
         }
     });
     ReactDOM.render(
-            <MyComponent/>,
+            <LikeButton/>,
         document.getElementById('example')
     );
 
