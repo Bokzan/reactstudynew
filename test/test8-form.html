@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
 </head>
 <body>
+<div id="example"></div>
 
+
+<script type="text/babel">
+    var Input = React.createClass({
+        getInitialState: function () {
+            return {value: 'hello'}
+        },
+        handleChange: function (event) {
+            console.log(event.target.onChange);
+            this.setState({value: event.target.value})
+        },
+
+        render: function () {
+            var value = this.state.value;
+            return (
+                    <div>
+                        <input type="text" name="vehicle" onChange={this.handleChange}
+                        <input type="radio" name="vehicle" value="Car" onChange={this.handleChange}/>
+                        <input type="radio" name="vehicle" value="a" onChange={this.handleChange}/>
+                        <input type="radio" name="vehicle" value="d" onChange={this.handleChange}/>
+
+                        <p>{value}</p>
+                    </div>
+        );
+        }
+        });
+        ReactDOM.render(
+            <Input/>
+        ,
+        document.getElementById('example')
+        );
+
+</script>
 </body>
 </html>
