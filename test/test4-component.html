@@ -12,12 +12,16 @@
 
 
 <script type="text/babel">
-    var arr = [
-        <h1>hello</h1>,
-        <h1>awesome</h1>
-    ]
+    var HelloMessage = React.createClass({
+        render: function () {
+            return
+            <div>
+                <h1>hello {this.props.name}</h1>
+            </div>
+        }
+    });
     ReactDOM.render(
-            <div>{arr}</div>,
+            <HelloMessage name="Bokzan"/>,
         document.querySelector('#example')
     );
 </script>
